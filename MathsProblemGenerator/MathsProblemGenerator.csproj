@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="EPPlus" Version="5.8.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\MathsProblem\MathsProblem.csproj" />
   </ItemGroup>
 

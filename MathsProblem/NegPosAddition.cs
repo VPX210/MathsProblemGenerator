@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace MathsProblem
 {
-    public class NegPosAddition
+    public class NegPosAddition : IMathsProblem
     {
         private int m_min;
         private int m_max;
@@ -12,6 +12,8 @@ namespace MathsProblem
         private readonly Random m_random = new Random();
 
         public string BlankSeparator { get; set; }
+
+        public string Description => "Addition and subtraction in the form: a + b = answer";
 
         public NegPosAddition(int min, int max, int ansMin, int ansMax)
         {
