@@ -31,12 +31,12 @@ namespace MathsProblemGenerator
         {
             if( writer.MaxNumX > 1)
             {
-                writer.NumX = ConsoleHelper.AskValue("Enter number of questions wide", 1, 1000, 3);
+                writer.NumX = ConsoleHelper.AskValue("Enter number of questions wide", 1, writer.MaxNumX, 3);
             }
 
             if (writer.MaxNumY > 1)
             {
-                writer.NumX = ConsoleHelper.AskValue("Enter number of questions high", 1, 1000, 30);
+                writer.NumY = ConsoleHelper.AskValue("Enter number of questions high", 1, writer.MaxNumY, 30);
             }
         }
 
