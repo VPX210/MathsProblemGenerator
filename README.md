@@ -6,7 +6,7 @@ Is run in modes:
 2. Writes output to CSV files:
  * Two CSV files: MathsProblemGenerator.csv and MathsProblemGeneratorAnswer.csv on the desktop folder
  * Commandline allows specifying the number of question columns and rows for the files (recommend 3 x 40)
- * Can be imported into a spreadsheed for formatting and printing
+ * Can be imported into a spreadsheet for formatting and printing
 3. Writes output to XLSX files:
  * Single .xlsx fils: MathsProblemGenerator.csv and MathsProblemGeneratorAnswer.xlsx on the desktop folder
  * Commandline allows specifying the number of questions columns and rows for the file (recommend 3 x 40)
