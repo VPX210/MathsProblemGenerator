@@ -17,7 +17,6 @@ namespace MathsProblem
 
         public NegPosAddition(int min, int max, int ansMin, int ansMax)
         {
-            BlankSeparator = "____";
 
             m_min = min;
             m_max = max;
@@ -31,6 +30,15 @@ namespace MathsProblem
             m_ansMax = ansMax;
             if (m_ansMax < m_max)
                 m_ansMax = m_max;
+
+            // Make sure there are enough _ to fit a max answer
+            BlankSeparator = "_";
+            var maxLen = Math.Abs(ansMax);
+            while (maxLen > 0)
+            {
+                maxLen /= 10;
+                BlankSeparator += "_";
+            }
         }
 
         public void GetNextProblem(out int a, out int b, out int answer)

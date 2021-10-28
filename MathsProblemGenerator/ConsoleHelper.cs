@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace MathsProblemGenerator
 {
@@ -21,7 +19,7 @@ namespace MathsProblemGenerator
 
         public static int AskValue(string ask, int min, int max, int defaultVal)
         {
-            Console.Write($"{ask} :");
+            Console.Write($"{ask} ({defaultVal}) :");
             var result = ReadValue(defaultVal);
             if (result < min)
                 result = min;

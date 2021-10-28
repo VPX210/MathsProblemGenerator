@@ -16,6 +16,18 @@ namespace MathsProblemGenerator
         public int NumX { get; set; }
         public int NumY { get; set; }
 
+        private void SetupWorkSheet( ExcelWorksheet ws )
+        {
+            ws.DefaultRowHeight = 20;
+            ws.DefaultColWidth = 5;
+            ws.Cells.Style.Font.Size = 16;
+
+            ws.PrinterSettings.FitToWidth = 1;
+            ws.PrinterSettings.PaperSize = ePaperSize.A4;
+            ws.PrinterSettings.Orientation = eOrientation.Portrait;
+            ws.PrinterSettings.ShowGridLines = true;
+        }
+
         public void Run(IMathsProblem problemGenerator)
         {
             var filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "MathsProblemGenerator.xlsx");
@@ -30,6 +42,9 @@ namespace MathsProblemGenerator
             {
                 var wsq = ep.Workbook.Worksheets.Add("Questions");
                 var wsa = ep.Workbook.Worksheets.Add("Answers");
+                SetupWorkSheet(wsq);
+                SetupWorkSheet(wsa);
+
                 for (var yLoop = 1; yLoop <= NumY; ++yLoop)
                 {
                     var xPos = 1;
@@ -39,6 +54,8 @@ namespace MathsProblemGenerator
 
                         for (var eLoop = 0; eLoop < quesion.Count; ++eLoop)
                         {
+                            wsa.Column(xPos).AutoFit(5);
+                            wsq.Column(xPos).AutoFit(5);
 
                             wsq.Cells[yLoop, xPos].Value = quesion[eLoop];
                             wsa.Cells[yLoop, xPos].Value = answer[eLoop];
