@@ -15,7 +15,7 @@ namespace MathsProblem
 
         public string Description => "Addition and subtraction in the form: a + b = answer";
 
-        public NegPosAddition(int min, int max, int ansMin, int ansMax)
+        public void Initialise(int min, int max, int ansMin, int ansMax)
         {
 
             m_min = min;

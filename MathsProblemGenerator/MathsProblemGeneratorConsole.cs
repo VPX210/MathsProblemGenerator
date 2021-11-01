@@ -6,14 +6,35 @@ namespace MathsProblemGenerator
 {
     public class MathsProblemGeneratorConsole
     {
+        private List<IMathsProblem> m_problemTypes = new List<IMathsProblem>();
         private List<IWriter> m_writers = new List<IWriter>();
 
+        // todo use autofac 
         public MathsProblemGeneratorConsole()
         {
             // todo do this as attributes
             m_writers.Add(new AdHocConsoleWriter());
             m_writers.Add(new XlsxWriter());
             m_writers.Add(new CsvWriter());
+
+            m_problemTypes.Add(new NegPosAddition());
+        }
+
+        private IMathsProblem SelectProblemType()
+        {
+            Console.WriteLine("Problem Type:");
+            for (var index = 0; index < m_problemTypes.Count; ++index)
+            {
+                Console.WriteLine($"  {index} : {m_problemTypes[index].Description}");
+            }
+            var selection = ConsoleHelper.AskValue("Select the problem type", 0, m_problemTypes.Count - 1, 0);
+            return m_problemTypes[selection];
+        }
+
+        private void InitialiseProblem(IMathsProblem mathsProblem)
+        {
+            AskABAnswerValues(out var qMin, out var qMax, out var aMin, out var aMax);
+            mathsProblem.Initialise(qMin, qMax, aMin, aMax);
         }
 
         private IWriter SelectWriter()
@@ -42,10 +63,9 @@ namespace MathsProblemGenerator
 
         public void Run()
         {
-            // todo this to be defined by the IMathsProblem
-            Console.WriteLine("Format is a + b = answer");
-            AskABAnswerValues(out var qMin, out var qMax, out var aMin, out var aMax);
-            var mathsProblem = new NegPosAddition(qMin, qMax, aMin, aMax);
+            // The IMathsProblem
+            var mathsProblem = SelectProblemType();
+            InitialiseProblem(mathsProblem);
 
             // The Writers
             var writer = SelectWriter();
