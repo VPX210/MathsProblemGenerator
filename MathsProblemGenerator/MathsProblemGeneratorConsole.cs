@@ -18,6 +18,7 @@ namespace MathsProblemGenerator
             m_writers.Add(new CsvWriter());
 
             m_problemTypes.Add(new NegPosAddition());
+            m_problemTypes.Add(new NegPosMultiply());
         }
 
         private IMathsProblem SelectProblemType()
