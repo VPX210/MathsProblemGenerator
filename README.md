@@ -27,5 +27,17 @@ Where
 * ans min max values can be set (can be negative)
 * Each problem generated rotate a, b then ans to be blank (calculated)
 
-## More to be added
-todo
+## Multiplication 
+Creates multiple problems in the format: a x b = ans
+Where 
+* a and b min max values can be set
+* ans min max values can be set
+* Each problem generated rotate a, b then ans to be blank (calculated)
+
+## Division 
+Creates multiple problems in the format: a / b = ans
+Where 
+* b min max values can be set
+* ans min max values can be set
+* ans is a whole number, a is always larger than b
+* Each problem generated rotate a, b then ans to be blank (calculated)
