@@ -20,6 +20,7 @@ namespace MathsProblemGenerator
             m_problemTypes.Add(new NegPosAddition());
             m_problemTypes.Add(new NegPosMultiply());
             m_problemTypes.Add(new NegPosDivide());
+            m_problemTypes.Add(new SimLinearBasic());
         }
 
         private IMathsProblem SelectProblemType()

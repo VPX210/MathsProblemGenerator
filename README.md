@@ -41,3 +41,15 @@ Where
 * ans min max values can be set
 * ans is a whole number, a is always larger than b
 * Each problem generated rotate a, b then ans to be blank (calculated)
+
+## Simultaneous Linear Basic Equations 
+Creates multiple problems in the format: 
+a x b = ans  Same as  a + b = ans
+a x b = ans  Same as  a - b = ans
+a / b = ans  Same as  a + b = ans
+a / b = ans  Same as  a - b = ans
+Where 
+* a and b min max values can be set
+* ans min max values can be set
+* ans is a whole number
+* a and b are blank and need to be calculatd

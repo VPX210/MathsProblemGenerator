@@ -18,7 +18,7 @@ namespace MathsProblemGenerator
 
         private void SetupWorkSheet( ExcelWorksheet ws )
         {
-            ws.DefaultRowHeight = 22;
+            ws.DefaultRowHeight = 23;
             ws.DefaultColWidth = 5;
             ws.Cells.Style.Font.Size = 16;
 

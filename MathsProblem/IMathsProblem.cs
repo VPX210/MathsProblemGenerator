@@ -11,7 +11,6 @@ namespace MathsProblem
 
         string BlankSeparator { get; set; }
 
-        void GetNextProblem(out int a, out int b, out int answer);
         void GenerateNextProblem(out List<string> questions, out List<string> answers);
     }
 }
