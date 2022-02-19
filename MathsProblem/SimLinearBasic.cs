@@ -48,7 +48,7 @@ namespace MathsProblem
                 a = m_random.Next(m_min, m_max + 1);
                 b = m_random.Next(m_min, m_max + 1);
                 answer = a * b;
-            } while (false); // (answer < m_ansMin || answer > m_ansMax);
+            } while (answer < m_ansMin || answer > m_ansMax);
         }
 
         private void GenerateNextDivideProblem(out int a, out int b, out int answer)
@@ -56,9 +56,9 @@ namespace MathsProblem
             do
             {
                 b = m_random.Next(m_min, m_max + 1);
-                answer = m_random.Next(m_ansMin, m_ansMax + 1);
+                answer = m_random.Next(m_min, m_max + 1);
                 a = b * answer;
-            } while (false); // (a < m_min || a > m_max);
+            } while (a < m_ansMin || a > m_ansMax);
         }
 
         // a x b = answer1
