@@ -43,13 +43,13 @@ namespace MathsProblem
             do
             {
                 GenerateNextProblem(out a, out b, out answer);
-            } while (b < m_min || b > m_max);
+            } while (a < m_ansMin || a > m_ansMax);
         }
 
         private void GenerateNextProblem(out int a, out int b, out int answer)
         {
             b = m_random.Next(m_min, m_max + 1);
-            answer = m_random.Next(m_ansMin, m_ansMax + 1);
+            answer = m_random.Next(m_min, m_max + 1);
             a = b * answer;
         }
 
