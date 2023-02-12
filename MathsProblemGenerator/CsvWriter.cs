@@ -17,9 +17,9 @@ namespace MathsProblemGenerator
 
         public void Run(IMathsProblem problemGenerator)
         {
-            var questionFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "MathsProblemGenerator.csv");
+            var questionFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), $"MathsProbGen{problemGenerator.FileNameSummary}.csv");
             Console.WriteLine($"Writing question CSV file to:{questionFilePath}");
-            var answerFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "MathsProblemGeneratorAnswers.csv");
+            var answerFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), $"MathsProbGen{problemGenerator.FileNameSummary}Answers.csv");
             Console.WriteLine($"Writing answer CSV file to:{answerFilePath}");
 
             using (var questionCsv = new StreamWriter(questionFilePath))

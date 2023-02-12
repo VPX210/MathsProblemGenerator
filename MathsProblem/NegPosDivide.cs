@@ -14,6 +14,7 @@ namespace MathsProblem
         public string BlankSeparator { get; set; }
 
         public string Description => "Division in the form: a / b = answer";
+        public string FileNameSummary => "Div";
 
         public void Initialise(int min, int max, int ansMin, int ansMax)
         {
@@ -43,13 +44,13 @@ namespace MathsProblem
             do
             {
                 GenerateNextProblem(out a, out b, out answer);
-            } while (a < m_ansMin || a > m_ansMax);
+            } while (a < m_min || a > m_max);
         }
 
         private void GenerateNextProblem(out int a, out int b, out int answer)
         {
-            b = m_random.Next(m_min, m_max + 1);
-            answer = m_random.Next(m_min, m_max + 1);
+            b = m_random.Next(m_ansMin, m_ansMax + 1);
+            answer = m_random.Next(m_ansMin, m_ansMax + 1);
             a = b * answer;
         }
 

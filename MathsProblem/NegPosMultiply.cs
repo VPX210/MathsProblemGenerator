@@ -14,6 +14,7 @@ namespace MathsProblem
         public string BlankSeparator { get; set; }
 
         public string Description => "Multiplication in the form: a x b = answer";
+        public string FileNameSummary => "Mult";
 
         public void Initialise(int min, int max, int ansMin, int ansMax)
         {

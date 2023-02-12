@@ -15,6 +15,8 @@ namespace MathsProblem
 
         public string Description => "Addition and subtraction in the form: a + b = answer";
 
+        public string FileNameSummary => "Add";
+
         public void Initialise(int min, int max, int ansMin, int ansMax)
         {
 

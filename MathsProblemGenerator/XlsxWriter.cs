@@ -30,7 +30,7 @@ namespace MathsProblemGenerator
 
         public void Run(IMathsProblem problemGenerator)
         {
-            var filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "MathsProblemGenerator.xlsx");
+            var filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), $"MathsProbGen{problemGenerator.FileNameSummary}.xlsx");
             Console.WriteLine($"Writing question XLSX file to:{filePath}");
 
             if (File.Exists(filePath))

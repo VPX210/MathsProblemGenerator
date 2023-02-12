@@ -14,6 +14,7 @@ namespace MathsProblem
         public string BlankSeparator { get; set; }
 
         public string Description => "Simultaneous Linear Basic Equations: a x b = answer1, a + b = answer2";
+        public string FileNameSummary => "SimBasic";
 
         public void Initialise(int min, int max, int ansMin, int ansMax)
         {
